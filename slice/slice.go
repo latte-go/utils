@@ -79,3 +79,12 @@ func RemoveSlice(slc []int64)[]int64{
 	}
 	return result
 }
+
+func InSlice(val string,slc []string) bool{
+	for _,v := range slc{
+		if v == val{
+			return true
+		}
+	}
+	return false
+}
