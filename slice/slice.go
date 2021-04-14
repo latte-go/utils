@@ -43,8 +43,8 @@ func sliceToString(b []interface{})(r string){
 	return
 }
 
-func Max(vals []int32) int32 {
-	var max int32
+func Max(vals []int64) int64 {
+	var max int64
 	for _, val := range vals {
 		if val > max {
 			max = val
@@ -53,8 +53,8 @@ func Max(vals []int32) int32 {
 	return max
 }
 
-func Min(vals []int32) int32{
-	var min int32
+func Min(vals []int64) int64{
+	var min int64
 	for _, val := range vals {
 		if min == 0 || val <= min {
 			min = val
