@@ -88,3 +88,21 @@ func InSlice(val string,slc []string) bool{
 	}
 	return false
 }
+
+//就差集
+func SupplementarySet(slice1, slice2 []int64) []int64 {
+	m := make(map[int64]int64)
+	for _, v := range slice1 {
+		m[v] = v
+	}
+	for _, v := range slice2 {
+		if m[v] != 0 {
+			delete(m, v)
+		}
+	}
+	var str []int64
+	for _, s2 := range m {
+		str = append(str, s2)
+	}
+	return str
+}
