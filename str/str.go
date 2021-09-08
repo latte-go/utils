@@ -9,3 +9,11 @@ func StrToInt64(inp string) (r int64) {
 	}
 	return
 }
+
+func StrToFloat(inp string) (r float64) {
+	var err error
+	if r, err = strconv.ParseFloat(inp, 10); err != nil {
+		return
+	}
+	return
+}
