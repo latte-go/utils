@@ -1,3 +1,3 @@
-module github.com/mileusna/useragent
+module github.com/latte-go/utils/useragent
 
-go 1.14
+go 1.17
