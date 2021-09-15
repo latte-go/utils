@@ -1,4 +1,4 @@
-# Go/Golang package for parsing user agent strings [![GoDoc](https://godoc.org/github.com/mileusna/useragent?status.svg)](https://godoc.org/github.com/mileusna/useragent)
+# Go/Golang package for parsing user agent strings [![GoDoc](https://godoc.org/github.com/latte-go/utils/useragnet?status.svg)](https://godoc.org/github.com/latte-go/utils/useragnet)
 
 Package `ua.Parse(userAgent string)` function parses browser's and bot's user agents strings and determins:
 + User agent name and version (Chrome, Firefox, Googlebot, etc.)
@@ -13,7 +13,7 @@ Still need some work on detecting Andorid device names.
 
 ## Installation <a id="installation"></a>
 ```
-go get github.com/mileusna/useragent
+go get github.com/latte-go/utils/useragnet
 ```
 
 ## Example<a id="example"></a>
@@ -25,7 +25,7 @@ import (
     "fmt"
     "strings"
 
-    "github.com/mileusna/useragent"
+    "github.com/latte-go/utils/useragnet"
 )
 
 func main() {
