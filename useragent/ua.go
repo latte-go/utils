@@ -443,23 +443,23 @@ func getWindowsVersion(osVersion string) string {
 	r := osVersion
 	switch osVersion {
 	case "5.0":
-		return "Windows 2000"
+		return "2000"
 	case "5.01":
-		return "Windows 2000, Service Pack 1 (SP1)"
+		return "2000, Service Pack 1 (SP1)"
 	case "5.1":
-		return "Windows XP"
+		return "XP"
 	case "5.2":
-		return "Windows XP x64 Edition"
+		return "XP x64 Edition"
 	case "6.0":
-		return "Windows Vista"
+		return "Vista"
 	case "6.1":
-		return "Windows 7"
+		return "7"
 	case "6.2":
-		return "Windows 8"
+		return "8"
 	case "6.3":
-		return "Windows 8.1"
+		return "8.1"
 	case "10.0":
-		return "Windows 10"
+		return "10"
 	}
 	return r
 }
