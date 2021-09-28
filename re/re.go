@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+// todo 配合https://rubular.com/ 这个网站使用
+
 func RegexGroup(regex, response string) (r []map[string]string) {
 
 	r = make([]map[string]string, 0)
