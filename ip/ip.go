@@ -9,3 +9,11 @@ func IpToInt(ip string) (r uint) {
 	}
 	return
 }
+
+func IpIntToString(ip uint) (r string) {
+	var err error
+	if r, err = exnet.Long2IPString(ip); err != nil {
+		r = ""
+	}
+	return
+}
