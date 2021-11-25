@@ -17,3 +17,11 @@ func StrToFloat(inp string) (r float64) {
 	}
 	return
 }
+
+func StrToUint64(inp string) (r uint64) {
+	var err error
+	if r, err = strconv.ParseUint(inp, 10, 64); err != nil {
+		return
+	}
+	return
+}
