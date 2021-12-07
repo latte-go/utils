@@ -7,23 +7,23 @@ import (
 
 type StringHeader struct {
 	Data uintptr
-	Len int
+	Len  int
 }
 
 type SliceHeader struct {
 	Data uintptr
-	Len int
-	Cap int
+	Len  int
+	Cap  int
 }
 
 //string to slice
-func stringToBytes(s string) (r []byte){
+func stringToBytes(s string) (r []byte) {
 	stringHeader := *(*reflect.StringHeader)(unsafe.Pointer(&s))
 
 	bh := reflect.SliceHeader{
 		Data: stringHeader.Data,
-		Len: stringHeader.Len,
-		Cap:stringHeader.Len,
+		Len:  stringHeader.Len,
+		Cap:  stringHeader.Len,
 	}
 
 	r = *(*[]byte)(unsafe.Pointer(&bh))
@@ -31,12 +31,12 @@ func stringToBytes(s string) (r []byte){
 }
 
 //slice to string
-func sliceToString(b []interface{})(r string){
+func sliceToString(b []interface{}) (r string) {
 	sliceHeader := *(*reflect.SliceHeader)(unsafe.Pointer(&b))
 
 	sh := reflect.StringHeader{
 		Data: sliceHeader.Data,
-		Len: sliceHeader.Len,
+		Len:  sliceHeader.Len,
 	}
 
 	r = *(*string)(unsafe.Pointer(&sh))
@@ -53,7 +53,7 @@ func Max(vals []int64) int64 {
 	return max
 }
 
-func Min(vals []int64) int64{
+func Min(vals []int64) int64 {
 	var min int64
 	for _, val := range vals {
 		if min == 0 || val <= min {
@@ -63,43 +63,52 @@ func Min(vals []int64) int64{
 	return min
 }
 
-func RemoveSlice(slc []int64)[]int64{
-	result := []int64{}  // 存放结果
-	for i := range slc{
+func RemoveSlice(slc []int64) []int64 {
+	result := []int64{} // 存放结果
+	for i := range slc {
 		flag := true
-		for j := range result{
+		for j := range result {
 			if slc[i] == result[j] {
-				flag = false  // 存在重复元素，标识为false
+				flag = false // 存在重复元素，标识为false
 				break
 			}
 		}
-		if flag {  // 标识为false，不添加进结果
+		if flag { // 标识为false，不添加进结果
 			result = append(result, slc[i])
 		}
 	}
 	return result
 }
 
-func RemoveSliceString(slc []string)[]string{
-	result := []string{}  // 存放结果
-	for i := range slc{
+func RemoveSliceString(slc []string) []string {
+	result := []string{} // 存放结果
+	for i := range slc {
 		flag := true
-		for j := range result{
+		for j := range result {
 			if slc[i] == result[j] {
-				flag = false  // 存在重复元素，标识为false
+				flag = false // 存在重复元素，标识为false
 				break
 			}
 		}
-		if flag {  // 标识为false，不添加进结果
+		if flag { // 标识为false，不添加进结果
 			result = append(result, slc[i])
 		}
 	}
 	return result
 }
 
-func InSlice(val string,slc []string) bool{
-	for _,v := range slc{
-		if v == val{
+func InStringSlice(val string, slc []string) bool {
+	for _, v := range slc {
+		if v == val {
+			return true
+		}
+	}
+	return false
+}
+
+func InIntSlice(val int64, slc []int64) bool {
+	for _, v := range slc {
+		if v == val {
 			return true
 		}
 	}
