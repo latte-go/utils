@@ -4,7 +4,6 @@ go 1.17
 
 require (
 	github.com/gomodule/redigo v1.8.5
-	github.com/iancoleman/orderedmap v0.2.0
 	github.com/thinkeridea/go-extend v1.3.2
 	github.com/xormplus/xorm v0.0.0-20210822100304-4e1d4fcc1e67
 )
